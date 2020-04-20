@@ -8,13 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+    @IBOutlet weak var operatorPicker: UIPickerView!
+    
+    static let Operators = ["+", "-", "/", "*"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.operatorPicker.delegate = self
+        self.operatorPicker.dataSource = self
+    }
+    
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ViewController.Operators.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ViewController.Operators[row]
+    }
+    
+    @IBAction func calculate(_ button: UIButton) {
+        
     }
 
-
 }
-
