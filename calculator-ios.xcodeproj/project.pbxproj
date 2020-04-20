@@ -16,6 +16,7 @@
 		EAC1A495244DFAC100E98B0C /* calculator_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1A494244DFAC100E98B0C /* calculator_iosTests.swift */; };
 		EAC1A4A0244DFAC100E98B0C /* calculator_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1A49F244DFAC100E98B0C /* calculator_iosUITests.swift */; };
 		EAC1A4AE244E21BF00E98B0C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1A4AD244E21BF00E98B0C /* Calculator.swift */; };
+		EAC1A4B0244E284200E98B0C /* CalculatorHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1A4AF244E284200E98B0C /* CalculatorHistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EAC1A49F244DFAC100E98B0C /* calculator_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculator_iosUITests.swift; sourceTree = "<group>"; };
 		EAC1A4A1244DFAC100E98B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC1A4AD244E21BF00E98B0C /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		EAC1A4AF244E284200E98B0C /* CalculatorHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				EAC1A488244DFAC100E98B0C /* LaunchScreen.storyboard */,
 				EAC1A48B244DFAC100E98B0C /* Info.plist */,
 				EAC1A4AD244E21BF00E98B0C /* Calculator.swift */,
+				EAC1A4AF244E284200E98B0C /* CalculatorHistoryViewController.swift */,
 			);
 			path = "calculator-ios";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				EAC1A4AE244E21BF00E98B0C /* Calculator.swift in Sources */,
 				EAC1A47E244DFAC000E98B0C /* AppDelegate.swift in Sources */,
 				EAC1A480244DFAC000E98B0C /* SceneDelegate.swift in Sources */,
+				EAC1A4B0244E284200E98B0C /* CalculatorHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

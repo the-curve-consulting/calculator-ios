@@ -62,6 +62,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIU-Ir-ROD">
+                                <rect key="frame" x="103" y="654" width="209" height="30"/>
+                                <state key="normal" title="View History"/>
+                                <connections>
+                                    <action selector="showHistory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Kn-aT-fd0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -79,7 +86,9 @@
                             <constraint firstItem="sRZ-eS-0aC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="OrP-qO-PiV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sRZ-eS-0aC" secondAttribute="trailing" constant="98" id="Peb-QU-VXM"/>
                             <constraint firstItem="FBO-c8-j06" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="QEh-Z3-SuO"/>
+                            <constraint firstItem="RIU-Ir-ROD" firstAttribute="top" secondItem="N3U-Ug-vdS" secondAttribute="bottom" constant="16" id="Rm3-uM-fCy"/>
                             <constraint firstItem="N3U-Ug-vdS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="WFa-ew-evB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RIU-Ir-ROD" secondAttribute="trailing" constant="102" id="WFr-c4-FSZ"/>
                             <constraint firstItem="IZe-Fz-kSn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aMV-V1-HIY"/>
                             <constraint firstItem="Ffg-mv-R7i" firstAttribute="top" secondItem="xbA-FW-LcL" secondAttribute="bottom" constant="35" id="bI3-B2-Lc2"/>
                             <constraint firstItem="IZe-Fz-kSn" firstAttribute="top" secondItem="Ffg-mv-R7i" secondAttribute="bottom" constant="8" id="e79-xv-BF4"/>
@@ -87,21 +96,54 @@
                             <constraint firstItem="xbA-FW-LcL" firstAttribute="top" secondItem="FBO-c8-j06" secondAttribute="bottom" constant="8" id="hHs-ha-9hj"/>
                             <constraint firstItem="kbi-wG-hkB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="mnn-Ri-dMv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ffg-mv-R7i" secondAttribute="trailing" constant="98" id="xQP-mt-jXu"/>
+                            <constraint firstItem="RIU-Ir-ROD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="y0q-dB-lV8"/>
                             <constraint firstItem="Ffg-mv-R7i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="yMa-6S-fSN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3U-Ug-vdS" secondAttribute="trailing" constant="98" id="z7d-wX-TTQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="answerLabel" destination="N3U-Ug-vdS" id="1C5-7F-B3p"/>
                         <outlet property="operatorPicker" destination="IZe-Fz-kSn" id="79x-Qv-o91"/>
                         <outlet property="value1" destination="xbA-FW-LcL" id="hah-BA-tl4"/>
                         <outlet property="value2" destination="a7x-zu-vdG" id="MCk-Mg-Bdc"/>
+                        <segue destination="4PM-by-AYu" kind="presentation" identifier="showHistory" id="tw7-BZ-hZ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Calculator History View Controller-->
+        <scene sceneID="Oxr-Uy-xcZ">
+            <objects>
+                <tableViewController id="4PM-by-AYu" customClass="CalculatorHistoryViewController" customModule="calculator_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nsu-G8-pwf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hks-Md-6Po">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hks-Md-6Po" id="jpG-DP-WkJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4PM-by-AYu" id="2rW-eS-xd3"/>
+                            <outlet property="delegate" destination="4PM-by-AYu" id="d2P-cM-Feo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YRu-ba-iwo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsA-42-WnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="139"/>
         </scene>
     </scenes>
 </document>

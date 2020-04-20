@@ -39,7 +39,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func calculate(_ button: UIButton) {
         let d1 = Double(value1.text!)!
         let d2 = Double(value2.text!)!
-        let calculator = CalculatorImpl()
+        let calculator = CalculatorImpl.shared
         let op = ViewController.Operators[operatorPicker.selectedRow(inComponent: 0)]
         switch op {
         case "+":
@@ -53,6 +53,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         default:
             answerLabel.text = ""
         }
+    }
+    
+    @IBAction func showHistory(_ button: UIButton) {
+        performSegue(withIdentifier: "showHistory", sender: button)
     }
     
 }
