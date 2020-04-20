@@ -23,7 +23,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.operatorPicker.dataSource = self
         self.answerLabel.text = ""
     }
-    
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -36,6 +35,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return ViewController.Operators[row]
     }
-
-
+    
+    @IBAction func calculate(_ button: UIButton) {
+        let d1 = Double(value1.text!)!
+        let d2 = Double(value2.text!)!
+        let calculator = CalculatorImpl()
+        let op = ViewController.Operators[operatorPicker.selectedRow(inComponent: 0)]
+        switch op {
+        case "+":
+            answerLabel.text = String(calculator.add(d1, d2))
+        case "-":
+            answerLabel.text = String(calculator.subtract(d1, d2))
+        case "/":
+            answerLabel.text = String(calculator.divide(d1, d2))
+        case "*":
+            answerLabel.text = String(calculator.multiply(d1, d2))
+        default:
+            answerLabel.text = ""
+        }
+    }
+    
 }
