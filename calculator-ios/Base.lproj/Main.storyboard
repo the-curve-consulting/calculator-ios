@@ -52,9 +52,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-eS-0aC">
                                 <rect key="frame" x="98" y="561" width="218" height="30"/>
                                 <state key="normal" title="Calculate"/>
-                                <connections>
-                                    <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bix-8n-QZ2"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3U-Ug-vdS">
                                 <rect key="frame" x="98" y="617" width="218" height="21"/>
@@ -93,7 +90,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="answerLabel" destination="N3U-Ug-vdS" id="1C5-7F-B3p"/>
                         <outlet property="operatorPicker" destination="IZe-Fz-kSn" id="79x-Qv-o91"/>
+                        <outlet property="value1" destination="xbA-FW-LcL" id="hah-BA-tl4"/>
+                        <outlet property="value2" destination="a7x-zu-vdG" id="MCk-Mg-Bdc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
