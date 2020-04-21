@@ -19,16 +19,24 @@ class calculator_iosTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAdd() throws {
+        let calc = CalculatorImpl()
+        XCTAssertEqual(calc.add(5, 10), 15)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSubtract() throws {
+        let calc = CalculatorImpl()
+        XCTAssertEqual(calc.subtract(5, 10), -5)
     }
-
+    
+    func testDivide() throws {
+        let calc = CalculatorImpl()
+        XCTAssertEqual(calc.divide(5, 10), 0.5)
+    }
+    
+    func testMultiply() throws {
+        let calc = CalculatorImpl()
+        XCTAssertEqual(calc.multiply(5, 10), 50)
+    }
+    
 }
