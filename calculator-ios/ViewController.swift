@@ -22,6 +22,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.operatorPicker.delegate = self
         self.operatorPicker.dataSource = self
         self.answerLabel.text = ""
+        
+        let tap = UITapGestureRecognizer(target: self.view,
+                                         action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
